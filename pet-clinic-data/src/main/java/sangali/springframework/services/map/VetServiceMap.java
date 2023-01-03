@@ -1,12 +1,13 @@
 package sangali.springframework.services.map;
 
+import org.springframework.stereotype.Service;
 import sangali.springframework.model.Vet;
 import sangali.springframework.services.CrudService;
 import sangali.springframework.services.VetService;
 
 
 import java.util.Set;
-
+@Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override

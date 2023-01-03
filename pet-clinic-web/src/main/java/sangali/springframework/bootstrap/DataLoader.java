@@ -1,13 +1,12 @@
 package sangali.springframework.bootstrap;
 
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import sangali.springframework.model.Owner;
 import sangali.springframework.model.Vet;
 import sangali.springframework.services.OwnerService;
 import sangali.springframework.services.VetService;
-import sangali.springframework.services.map.OwnerServiceMap;
-import sangali.springframework.services.map.VetServiceMap;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -15,13 +14,13 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public DataLoader() {
-        ownerService = new OwnerServiceMap();
-        vetService = new VetServiceMap();
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args)  {
 
         Owner owner1 = new Owner();
         owner1.setId(1L);
@@ -31,9 +30,9 @@ public class DataLoader implements CommandLineRunner {
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
-        owner1.setId(2L);
-        owner1.setFirstName("Fiona");
-        owner1.setLastName("Glename");
+        owner2.setId(2L);
+        owner2.setFirstName("Fiona");
+        owner2.setLastName("Glename");
 
         ownerService.save(owner2);
 
