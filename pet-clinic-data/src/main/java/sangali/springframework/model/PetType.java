@@ -1,5 +1,11 @@
 package sangali.springframework.model;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "types")
 public class PetType extends BaseEntity{
 
     public String getName() {
@@ -10,6 +16,7 @@ public class PetType extends BaseEntity{
         this.name = name;
     }
 
+    @Column(name = "name")
     private String name;
 
 }
