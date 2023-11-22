@@ -3,7 +3,6 @@ package sangali.springframework.services.map;
 import org.springframework.stereotype.Service;
 import sangali.springframework.model.Owner;
 import sangali.springframework.model.Pet;
-import sangali.springframework.model.PetType;
 import sangali.springframework.services.OwnerService;
 import sangali.springframework.services.PetService;
 import sangali.springframework.services.PetTypeService;
